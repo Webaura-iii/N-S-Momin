@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N.S Collection | Storefront</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="bg-[#FDFBF7] text-[#1E1E1E] antialiased">
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header className="sticky top-0 sm:top-9 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#E8E1D5] transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#top" id="brand-logo" class="flex-shrink-0 flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-[#5C1D24] text-[#E6CA85] flex items-center justify-center font-serif font-bold text-sm border border-[#C5A059]">
+          NS
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-base font-semibold tracking-wide text-[#1E1E1E]">N.S Collection</span>
+          <span class="text-[9px] tracking-widest uppercase text-[#C5A059] font-sans">By Noor Saba Momin</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center space-x-5 text-[13px] font-medium text-[#1E1E1E]">
+        <button onclick="navigateToSection('section-shop')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">Shop Catalogue</button>
+        <button onclick="navigateToSection('section-hampers')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">Hijab Hampers</button>
+        <button onclick="navigateToSection('section-custom-hamper')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">Custom Hamper</button>
+        <button onclick="navigateToSection('section-about')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">Our Story</button>
+        <button onclick="navigateToSection('section-how-to-order')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">How to Order</button>
+        <button onclick="navigateToSection('section-reviews')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">Reviews</button>
+        <button onclick="navigateToSection('section-faq')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#C5A059] hover:after:w-full after:transition-all cursor-pointer">FAQ</button>
+      </nav>
+
+      <!-- Right CTA Actions -->
+      <div class="flex items-center gap-2.5">
+        <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" title="Follow @noor_saba_momin on Instagram" class="hidden sm:flex items-center gap-1.5 text-[11px] text-zinc-600 hover:text-[#5C1D24] px-2.5 py-1 rounded-full border border-[#E8E1D5] hover:border-[#C5A059] transition-colors">
+          <i data-lucide="instagram" class="w-3 h-3 text-[#C5A059]"></i>
+          <span class="font-medium">@noor_saba_momin</span>
+        </a>
+
+        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20would%20like%20to%20order%20from%20your%20hijab%20catalogue!" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#25D366]/30 transition-all">
+          <i data-lucide="message-circle" class="w-3 h-3"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button id="btn-open-cart" onclick="toggleCartModal()" aria-label="Open Shopping Bag" class="relative p-2 rounded-full bg-[#FAF7F0] border border-[#C5A059]/40 hover:bg-[#F3EDE2] text-[#1E1E1E] transition-colors flex items-center justify-center shadow-xs cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-[#5C1D24]"></i>
+          <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-[#5C1D24] text-white text-[10px] font-bold rounded-full w-4.5 h-4.5 flex items-center justify-center border-2 border-white shadow-xs">
+            0
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-1.5 rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-zinc-100 cursor-pointer" aria-label="Toggle menu">
+          <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+          <i data-lucide="x" id="close-icon" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden bg-[#FDFBF7] border-b border-[#E8E1D5] px-4 pt-2 pb-5 space-y-2.5 shadow-lg">
+      <div class="grid grid-cols-1 gap-1">
+        <button onclick="handleLinkClick('section-shop')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Shop Catalogue</button>
+        <button onclick="handleLinkClick('section-hampers')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Hijab Hampers</button>
+        <button onclick="handleLinkClick('section-custom-hamper')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Custom Hamper</button>
+        <button onclick="handleLinkClick('section-about')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Our Story</button>
+        <button onclick="handleLinkClick('section-how-to-order')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">How to Order</button>
+        <button onclick="handleLinkClick('section-reviews')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Reviews</button>
+        <button onclick="handleLinkClick('section-faq')" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">FAQ</button>
+      </div>
+
+      <div class="pt-2.5 border-t border-[#E8E1D5] flex flex-col gap-2">
+        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20would%20like%20to%20place%20an%20order!" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 w-full py-2 bg-[#25D366] text-white rounded-md text-xs font-medium shadow-xs">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span>Chat on WhatsApp to Order</span>
+        </a>
+        <button onclick="toggleMobileMenu(); openAdminPanel();" class="flex items-center justify-center gap-1.5 w-full py-1.5 text-xs text-zinc-600 bg-zinc-100 rounded-md hover:bg-zinc-200 cursor-pointer">
+          <span>Access Owner Admin Panel</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= SHOP SECTION ================= -->
+  <section id="section-shop" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-10">
+        <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
+          <i data-lucide="sparkles" class="w-3 h-3"></i>
+          <span>Curated Palette</span>
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#1E1E1E]">
+          Handcrafted Hijabs & Scarves
+        </h2>
+        <p class="font-sans text-xs sm:text-sm text-zinc-600 font-light max-w-lg mx-auto">
+          Lightweight, opaque, and gracefully textured to accompany you through every celebration and daily moment.
+        </p>
+      </div>
+
+      <!-- Filter Controls & Search Bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3 mb-8">
+        <div id="category-tabs-container" class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1.5 md:pb-0 scrollbar-none">
+          <!-- Dynamically Generated Category Tabs -->
+        </div>
+
+        <div class="relative w-full md:w-64">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input
+            type="text"
+            id="shop-search-input"
+            placeholder="Search shades, fabrics..."
+            oninput="handleSearch(event)"
+            class="w-full pl-8 pr-3 py-1.5 bg-white border border-[#E8E1D5] rounded-full text-xs text-zinc-800 focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all"
+          />
+        </div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div id="product-grid-container">
+        <!-- Dynamic Product Cards Grid Rendered Here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder sections for navigation anchor links -->
+  <section id="section-hampers" class="py-10 bg-[#FAF7F0] border-b border-[#E8E1D5] text-center text-xs text-zinc-500">Hijab Hampers Section</section>
+  <section id="section-custom-hamper" class="py-10 bg-[#FDFBF7] border-b border-[#E8E1D5] text-center text-xs text-zinc-500">Custom Hamper Builder Section</section>
+  <section id="section-about" class="py-10 bg-[#FAF7F0] border-b border-[#E8E1D5] text-center text-xs text-zinc-500">Our Story Section</section>
+  <section id="section-how-to-order" class="py-10 bg-[#FDFBF7] border-b border-[#E8E1D5] text-center text-xs text-zinc-500">How To Order Section</section>
+
+  <!-- ================= SOCIAL PROOF / REVIEWS SECTION ================= -->
+  <section id="section-reviews" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Instagram Header & Follower Proof -->
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#C5A059]/40 text-[#5C1D24] text-[11px] font-semibold uppercase tracking-[0.2em] shadow-xs">
+          <i data-lucide="instagram" class="w-3 h-3 text-[#C5A059]"></i>
+          <span>Join Our Global Community</span>
+        </div>
+
+        <h2 class="font-serif text-2xl sm:text-3xl text-[#1E1E1E] font-normal">
+          Follow @noor_saba_momin
+        </h2>
+
+        <p class="font-sans text-xs sm:text-sm text-zinc-600 font-light max-w-md mx-auto leading-relaxed">
+          Daily styling tutorials, upcoming collection swatches, and stories from our modest fashion family.
+        </p>
+
+        <div class="pt-1.5">
+          <a
+            href="https://instagram.com/noor_saba_momin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white text-xs font-semibold shadow-xs hover:opacity-95 transition-opacity"
+          >
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+            <span id="ig-follower-text">Follow on Instagram (48.5K)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Instagram Highlight Reel Grid -->
+      <div id="instagram-reel-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Customer Reviews & Testimonials Section -->
+      <div class="pt-6 border-t border-[#E8E1D5] space-y-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[10px] font-semibold uppercase tracking-wider text-[#C5A059] block">
+              Real Customer Love
+            </span>
+            <h3 class="font-serif text-xl sm:text-2xl text-[#1E1E1E]">
+              Words From Our Discerning Clients
+            </h3>
+          </div>
+          <button
+            onclick="openLeaveReviewModal()"
+            class="px-4 py-2 rounded-full bg-white border border-[#C5A059] hover:bg-[#FAF7F0] text-[#5C1D24] text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+          >
+            <i data-lucide="message-square-heart" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+            <span>Leave a Review</span>
+          </button>
+        </div>
+
+        <!-- Testimonial Cards Grid -->
+        <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-faq" class="py-10 bg-[#FAF7F0] border-b border-[#E8E1D5] text-center text-xs text-zinc-500">FAQ & Shipping Section</section>
+
+  <!-- ================= STORE FOOTER ================= -->
+  <footer class="bg-[#1E1E1E] text-zinc-300 pt-12 pb-8 border-t border-[#333333]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- Brand & Mission Column -->
+        <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-[#5C1D24] text-[#E6CA85] flex items-center justify-center font-serif font-bold text-sm border border-[#C5A059]">
+              NS
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-base font-semibold tracking-wide text-white">N.S Collection</span>
+              <span class="text-[9px] tracking-widest uppercase text-[#C5A059] font-sans">By Noor Saba Momin</span>
+            </div>
+          </div>
+          <p class="text-xs text-zinc-400 font-light leading-relaxed max-w-sm">
+            Redefining modest fashion through artisan-selected fabrics, ethereal draping, and heirloom gift hampers. Curated with love by Noor Saba Momin.
+          </p>
+          <div class="flex items-center gap-2.5 pt-1">
+            <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-800 hover:bg-[#5C1D24] text-zinc-200 hover:text-white flex items-center justify-center transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="https://wa.me/?text=Hi%20Noor%20Saba%2C%20I%20love%20N.S%20Collection!" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-zinc-800 hover:bg-[#25D366] text-zinc-200 hover:text-white flex items-center justify-center transition-colors" aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[#E6CA85]">Shop</h4>
+          <ul class="space-y-2 text-xs">
+            <li><button onclick="navigateToSection('section-shop')" class="hover:text-white transition-colors cursor-pointer">All Hijabs & Scarves</button></li>
+            <li><button onclick="navigateToSection('section-hampers')" class="hover:text-white transition-colors cursor-pointer">Luxury Hampers</button></li>
+            <li><button onclick="navigateToSection('section-custom-hamper')" class="hover:text-white transition-colors cursor-pointer text-[#E6CA85]">Build Your Own Hamper</button></li>
+            <li><button onclick="navigateToSection('section-about')" class="hover:text-white transition-colors cursor-pointer">About Noor Saba</button></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[#E6CA85]">Customer Care</h4>
+          <ul class="space-y-2 text-xs">
+            <li><button onclick="navigateToSection('section-how-to-order')" class="hover:text-white transition-colors cursor-pointer">How to Order</button></li>
+            <li><button onclick="navigateToSection('section-faq')" class="hover:text-white transition-colors cursor-pointer">FAQ & Shipping Times</button></li>
+            <li><button onclick="navigateToSection('section-reviews')" class="hover:text-white transition-colors cursor-pointer">Customer Reviews</button></li>
+            <li><button onclick="openAdminPanel()" class="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer">Admin Portal</button></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[#E6CA85]">The N.S VIP Club</h4>
+          <p class="text-xs text-zinc-400 font-light leading-relaxed">
+            Receive early access to seasonal color drops, private styling guides, and exclusive Eid hamper pre-orders.
+          </p>
+
+          <form id="newsletter-form" onsubmit="handleSubscribe(event)" class="flex gap-2">
+            <input
+              type="email"
+              id="newsletter-email"
+              required
+              placeholder="Enter your email address"
+              class="flex-1 px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#C5A059]"
+            />
+            <button
+              type="submit"
+              id="newsletter-btn"
+              class="px-3.5 py-2 rounded-lg bg-[#C5A059] hover:bg-[#b08d47] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+            >
+              <span>Join</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-3">
+        <p>© <span id="current-year"></span> N.S Collection. All rights reserved. Curated by Noor Saba Momin.</p>
+        <div class="flex items-center gap-4">
+          <span>Worldwide Shipping</span>
+          <span>•</span>
+          <button onclick="openAdminPanel()" class="text-zinc-400 hover:text-zinc-200 underline underline-offset-2">
+            Open Owner Admin Panel
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= STICKY CONTACT WIDGETS ================= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
+    <!-- Instagram Floating Button -->
+    <a
+      href="https://instagram.com/noor_saba_momin"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Follow on Instagram @noor_saba_momin"
+      class="pointer-events-auto p-3 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
+    >
+      <i data-lucide="instagram" class="w-5 h-5"></i>
+      <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-semibold pl-0 group-hover:pl-2">
+        @noor_saba_momin
+      </span>
+    </a>
+
+    <!-- WhatsApp Order Floating Button -->
+    <a
+      href="https://wa.me/?text=Hello%20Noor%20Saba%2C%20I%20am%20browsing%20N.S%20Collection%20and%20would%20like%20to%20place%20an%20order!"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp to order"
+      class="pointer-events-auto px-4 py-3 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group"
+    >
+      <div class="relative">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span class="w-2.5 h-2.5 rounded-full bg-white absolute -top-0.5 -right-0.5 animate-ping"></span>
+      </div>
+      <div class="flex flex-col text-left">
+        <span class="text-xs font-bold leading-none">Order on WhatsApp</span>
+        <span class="text-[10px] text-emerald-100 font-light leading-tight">Direct with Noor</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div id="quickview-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
+    <!-- Rendered Dynamically via JS -->
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
