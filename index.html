@@ -4,27 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N.S Collection | Storefront</title>
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <!-- Google Fonts for Serif Look -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
-<body id="top" class="bg-[#FDFBF7] text-[#1E1E1E] antialiased">
+<body id="top" class="bg-[#FDFBF7] text-[#1E1E1E] antialiased flex flex-col min-h-screen">
 
   <!-- Promo Banner -->
-  <div id="promo-banner" class="bg-[#5C1D24] text-[#FAF7F0] text-[11px] sm:text-xs py-1.5 px-3 text-center border-b border-[#C5A059]/30 relative overflow-hidden">
-    <div class="flex items-center justify-center gap-1.5">
+  <div id="promo-banner" class="bg-[#5C1D24] text-[#FAF7F0] text-[10px] xs:text-[11px] sm:text-xs py-1.5 px-3 text-center border-b border-[#C5A059]/30 relative overflow-hidden">
+    <div class="flex items-center justify-center gap-1.5 max-w-7xl mx-auto">
       <i data-lucide="sparkles" class="w-3 h-3 text-[#E6CA85] flex-shrink-0 animate-pulse"></i>
       <span id="promo-banner-text" class="font-sans font-medium tracking-wide">Complimentary Gold Gift Packaging on All Domestic Orders Above ₹2,499</span>
       <i data-lucide="sparkles" class="w-3 h-3 text-[#E6CA85] flex-shrink-0 animate-pulse"></i>
@@ -33,7 +25,7 @@
 
   <!-- HEADER / NAVBAR -->
   <header class="sticky top-0 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#E8E1D5] transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
       
       <!-- Brand Logo -->
       <a href="#top" id="brand-logo" class="flex-shrink-0 flex items-center gap-2">
@@ -41,31 +33,31 @@
           NS
         </div>
         <div class="flex flex-col">
-          <span class="font-serif text-base font-semibold tracking-wide text-[#1E1E1E]">N.S Collection</span>
-          <span class="text-[9px] tracking-widest uppercase text-[#C5A059] font-sans">By Noor Saba Momin</span>
+          <span class="font-serif text-sm sm:text-base font-semibold tracking-wide text-[#1E1E1E] leading-tight">N.S Collection</span>
+          <span class="text-[8px] sm:text-[9px] tracking-widest uppercase text-[#C5A059] font-sans">By Noor Saba Momin</span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center space-x-5 text-[13px] font-medium text-[#1E1E1E]">
-        <button onclick="navigateToSection('section-shop')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">Shop Catalogue</button>
-        <button onclick="navigateToSection('section-hampers')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">Hijab Hampers</button>
-        <button onclick="navigateToSection('section-custom-hamper')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">Custom Hamper</button>
-        <button onclick="navigateToSection('section-about')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">Our Story</button>
-        <button onclick="navigateToSection('section-how-to-order')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">How to Order</button>
-        <button onclick="navigateToSection('section-reviews')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">Reviews</button>
-        <button onclick="navigateToSection('section-faq')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer">FAQ</button>
+      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 text-[12px] xl:text-[13px] font-medium text-[#1E1E1E]">
+        <button onclick="navigateToSection('section-shop')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Shop Catalogue</button>
+        <button onclick="navigateToSection('section-hampers')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Hijab Hampers</button>
+        <button onclick="navigateToSection('section-custom-hamper')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Custom Hamper</button>
+        <button onclick="navigateToSection('section-about')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Our Story</button>
+        <button onclick="navigateToSection('section-how-to-order')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">How to Order</button>
+        <button onclick="navigateToSection('section-reviews')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Reviews</button>
+        <button onclick="navigateToSection('section-faq')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">FAQ</button>
       </nav>
 
       <!-- Right CTA Actions -->
-      <div class="flex items-center gap-2.5">
-        <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" title="Follow @noor_saba_momin on Instagram" class="hidden sm:flex items-center gap-1.5 text-[11px] text-zinc-600 hover:text-[#5C1D24] px-2.5 py-1 rounded-full border border-[#E8E1D5] hover:border-[#C5A059] transition-colors">
-          <i data-lucide="instagram" class="w-3 h-3 text-[#C5A059]"></i>
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" title="Follow @noor_saba_momin on Instagram" class="hidden sm:flex items-center gap-1.5 text-[11px] text-zinc-600 hover:text-[#5C1D24] px-2.5 py-1.5 rounded-full border border-[#E8E1D5] hover:border-[#C5A059] transition-colors">
+          <i data-lucide="instagram" class="w-3.5 h-3.5 text-[#C5A059]"></i>
           <span class="font-medium">@noor_saba_momin</span>
         </a>
 
-        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20would%20like%20to%20order%20from%20your%20hijab%20catalogue!" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#25D366]/30 transition-all">
-          <i data-lucide="message-circle" class="w-3 h-3"></i>
+        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20would%20like%20to%20order%20from%20your%20hijab%20catalogue!" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 px-2.5 py-1.5 rounded-full text-xs font-semibold border border-[#25D366]/30 transition-all">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
           <span>WhatsApp</span>
         </a>
 
@@ -107,9 +99,8 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative overflow-hidden pt-6 pb-12 lg:py-16 border-b border-[#EFE8DC]">
+  <section class="relative overflow-hidden pt-6 pb-12 sm:py-14 lg:py-16 border-b border-[#EFE8DC]">
     <div class="absolute inset-0 z-0">
-      <!-- <img id="hero-bg-img" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=2000&q=85" alt="N.S Collection Backdrop" class="w-full h-full object-cover object-center scale-105" /> -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF7]/97 via-[#FAF6ED]/93 to-[#FDFBF7]/96 backdrop-blur-[2px]"></div>
       <div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
     </div>
@@ -118,22 +109,24 @@
     <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-[#5C1D24]/10 blur-3xl pointer-events-none z-0"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-        <div class="lg:col-span-7 text-center lg:text-left space-y-4 sm:space-y-5">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-[#C5A059]/40 text-[#5C1D24] text-[11px] font-medium tracking-wide shadow-2xs">
+      <!-- Fixed responsive breakpoint: md:grid-cols-2 lg:grid-cols-12 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <div class="md:col-span-1 lg:col-span-7 text-center md:text-left space-y-4 sm:space-y-5">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-[#C5A059]/40 text-[#5C1D24] text-[10px] sm:text-[11px] font-medium tracking-wide shadow-2xs">
             <i data-lucide="sparkles" class="w-3 h-3 text-[#C5A059]"></i>
             <span>N.S Collection • Curated by Noor Saba Momin</span>
           </div>
 
-          <h1 id="hero-heading" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1E1E1E] leading-[1.18] tracking-tight">
+          <h1 id="hero-heading" class="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1E1E1E] leading-[1.18] tracking-tight">
             Redefining Modest Fashion
           </h1>
 
-          <p id="hero-subheading" class="font-sans text-xs sm:text-sm text-zinc-600 max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
+          <p id="hero-subheading" class="font-sans text-xs sm:text-sm text-zinc-600 max-w-xl leading-relaxed font-light mx-auto md:mx-0">
             Elevate your everyday look with artisan textured hijabs, ethereal georgettes, and bespoke gift hampers handcrafted for meaningful moments.
           </p>
 
-          <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-2.5 text-[11px] text-zinc-700 pt-1">
+          <div class="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2.5 text-[10px] sm:text-[11px] text-zinc-700 pt-1">
             <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/90 border border-[#E8E1D5] shadow-2xs">
               <i data-lucide="globe" class="w-3 h-3 text-[#C5A059]"></i>
               <span class="font-medium">Worldwide Tracked Delivery</span>
@@ -148,7 +141,7 @@
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 pt-2">
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-2.5 pt-2">
             <button id="hero-cta-shop" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#5C1D24] text-white font-medium text-xs sm:text-sm hover:bg-[#47151a] transition-all shadow-xs hover:shadow-md flex items-center justify-center gap-2 group cursor-pointer">
               <span>Shop Collection</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-[#E6CA85] group-hover:translate-x-0.5 transition-transform"></i>
@@ -165,33 +158,33 @@
             </a>
           </div>
 
-          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-[#E8E1D5]/80 max-w-md mx-auto lg:mx-0">
+          <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-[#E8E1D5]/80 max-w-md mx-auto md:mx-0">
             <div>
-              <p id="stat-ig" class="font-serif text-xl sm:text-2xl font-bold text-[#5C1D24]">48.5K+</p>
-              <p class="text-[10px] text-zinc-500 font-medium mt-0.5">IG @noor_saba_momin</p>
+              <p id="stat-ig" class="font-serif text-lg sm:text-2xl font-bold text-[#5C1D24]">48.5K+</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-500 font-medium mt-0.5">IG @noor_saba_momin</p>
             </div>
             <div>
-              <p id="stat-hampers" class="font-serif text-xl sm:text-2xl font-bold text-[#C5A059]">12,400+</p>
-              <p class="text-[10px] text-zinc-500 font-medium mt-0.5">Hampers Delivered</p>
+              <p id="stat-hampers" class="font-serif text-lg sm:text-2xl font-bold text-[#C5A059]">12,400+</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-500 font-medium mt-0.5">Hampers Delivered</p>
             </div>
             <div>
-              <p class="font-serif text-xl sm:text-2xl font-bold text-[#1E1E1E]">99.4%</p>
-              <p class="text-[10px] text-zinc-500 font-medium mt-0.5">Loved Worldwide</p>
+              <p class="font-serif text-lg sm:text-2xl font-bold text-[#1E1E1E]">99.4%</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-500 font-medium mt-0.5">Loved Worldwide</p>
             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-sm lg:max-w-none">
+        <div class="md:col-span-1 lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-xs sm:max-w-sm md:max-w-none">
             <div class="absolute -inset-2 rounded-xl border border-[#C5A059]/40 transform rotate-1 hidden sm:block pointer-events-none"></div>
             <div class="relative rounded-lg overflow-hidden shadow-xl bg-zinc-100 aspect-[4/5] border border-[#E8E1D5]">
               <img id="hero-img" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85" alt="N.S Collection Modest Fashion" class="w-full h-full object-cover object-center transform hover:scale-103 transition-transform duration-700" />
-              <div class="absolute bottom-3 left-3 right-3 bg-[#FDFBF7]/95 backdrop-blur-xs p-3 rounded-lg border border-[#C5A059]/30 shadow-md flex items-center justify-between">
+              <div class="absolute bottom-3 left-3 right-3 bg-[#FDFBF7]/95 backdrop-blur-xs p-2.5 sm:p-3 rounded-lg border border-[#C5A059]/30 shadow-md flex items-center justify-between gap-2">
                 <div>
-                  <span class="text-[9px] tracking-widest uppercase font-semibold text-[#C5A059] block">Limited Seasonal Drop</span>
+                  <span class="text-[8px] sm:text-[9px] tracking-widest uppercase font-semibold text-[#C5A059] block">Limited Seasonal Drop</span>
                   <h4 class="font-serif text-xs sm:text-sm font-semibold text-[#1E1E1E]">Champagne & Maroon Silks</h4>
                 </div>
-                <button id="hero-card-view-btn" class="text-[11px] font-semibold text-[#5C1D24] underline underline-offset-2 hover:text-[#C5A059] transition-colors cursor-pointer">
+                <button id="hero-card-view-btn" class="text-[10px] sm:text-[11px] font-semibold text-[#5C1D24] underline underline-offset-2 hover:text-[#C5A059] transition-colors cursor-pointer whitespace-nowrap">
                   View Pieces
                 </button>
               </div>
@@ -203,11 +196,11 @@
   </section>
 
   <!-- SHOP SECTION -->
-  <section id="section-shop" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
+  <section id="section-shop" class="py-12 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-10">
-        <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
+        <div class="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
           <i data-lucide="sparkles" class="w-3 h-3"></i>
           <span>Curated Palette</span>
         </div>
@@ -220,12 +213,12 @@
       </div>
 
       <!-- Filter Controls & Search Bar -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-3 mb-8">
-        <div id="category-tabs-container" class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1.5 md:pb-0 scrollbar-none">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8">
+        <div id="category-tabs-container" class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 scrollbar-none">
           <!-- Dynamically Generated Category Tabs -->
         </div>
 
-        <div class="relative w-full md:w-64">
+        <div class="relative w-full sm:w-64">
           <i data-lucide="search" class="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
           <input
             type="text"
@@ -245,12 +238,12 @@
   </section>
 
   <!-- Hampers Section -->
-  <section id="section-hampers" class="py-14 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC] relative overflow-hidden">
+  <section id="section-hampers" class="py-12 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC] relative overflow-hidden">
     <div class="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-[#C5A059]/5 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center max-w-2xl mx-auto space-y-2 mb-10">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#C5A059]/50 text-[#5C1D24] text-[11px] font-semibold uppercase tracking-[0.2em] shadow-2xs">
+      <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#C5A059]/50 text-[#5C1D24] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] shadow-2xs">
           <i data-lucide="gift" class="w-3 h-3 text-[#C5A059]"></i>
           <span>The Signature Gifting Experience</span>
         </div>
@@ -260,29 +253,29 @@
         </p>
       </div>
 
-      <div id="hampers-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
+      <div id="hampers-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 sm:mb-12">
         <!-- Rendered dynamically by JavaScript -->
       </div>
 
       <div class="bg-white rounded-xl border border-[#E8E1D5] p-4 sm:p-5 grid grid-cols-1 md:grid-cols-3 gap-4 text-center divide-y md:divide-y-0 md:divide-x divide-[#E8E1D5]">
         <div class="px-3 space-y-0.5">
-          <h4 class="font-serif text-sm font-semibold text-[#1E1E1E]">Bespoke Wax-Sealed Note</h4>
-          <p class="text-[11px] text-zinc-500 font-light">Add your personalized calligraphy message during checkout for any gift recipient.</p>
+          <h4 class="font-serif text-xs sm:text-sm font-semibold text-[#1E1E1E]">Bespoke Wax-Sealed Note</h4>
+          <p class="text-[10px] sm:text-[11px] text-zinc-500 font-light">Add your personalized calligraphy message during checkout for any gift recipient.</p>
         </div>
         <div class="pt-3 md:pt-0 px-3 space-y-0.5">
-          <h4 class="font-serif text-sm font-semibold text-[#1E1E1E]">Express Domestic & Global</h4>
-          <p class="text-[11px] text-zinc-500 font-light">Courier prioritized for bridal deadlines, festivals, and time-sensitive gift deliveries.</p>
+          <h4 class="font-serif text-xs sm:text-sm font-semibold text-[#1E1E1E]">Express Domestic & Global</h4>
+          <p class="text-[10px] sm:text-[11px] text-zinc-500 font-light">Courier prioritized for bridal deadlines, festivals, and time-sensitive gift deliveries.</p>
         </div>
         <div class="pt-3 md:pt-0 px-3 space-y-0.5">
-          <h4 class="font-serif text-sm font-semibold text-[#1E1E1E]">Keepsake Chest Quality</h4>
-          <p class="text-[11px] text-zinc-500 font-light">Rigid linen-finish keepsake boxes designed to store precious jewellery and scarves for years.</p>
+          <h4 class="font-serif text-xs sm:text-sm font-semibold text-[#1E1E1E]">Keepsake Chest Quality</h4>
+          <p class="text-[10px] sm:text-[11px] text-zinc-500 font-light">Rigid linen-finish keepsake boxes designed to store precious jewellery and scarves for years.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="section-about" class="py-14 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC] relative overflow-hidden">
+  <section id="section-about" class="py-12 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         <div class="lg:col-span-5 relative order-2 lg:order-1">
@@ -290,7 +283,7 @@
             <div class="rounded-xl overflow-hidden shadow-md border border-[#C5A059]/40 aspect-[4/5] bg-zinc-200">
               <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Noor Saba Momin - N.S Collection" class="w-full h-full object-cover" />
             </div>
-            <div class="absolute -bottom-4 -right-2 sm:-right-4 bg-white p-3 rounded-lg shadow-md border border-[#E8E1D5] max-w-[200px]">
+            <div class="absolute -bottom-4 -right-2 sm:-right-4 bg-white p-3 rounded-lg shadow-md border border-[#E8E1D5] max-w-[180px] sm:max-w-[200px]">
               <div class="flex items-center gap-1.5 mb-0.5">
                 <i data-lucide="instagram" class="w-3.5 h-3.5 text-[#5C1D24]"></i>
                 <span class="text-xs font-bold text-zinc-900">@noor_saba_momin</span>
@@ -301,7 +294,7 @@
         </div>
 
         <div class="lg:col-span-7 space-y-4 order-1 lg:order-2">
-          <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
+          <div class="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
             <i data-lucide="sparkles" class="w-3 h-3"></i>
             <span>Our Philosophy & Heritage</span>
           </div>
@@ -322,7 +315,7 @@
                 <i data-lucide="award" class="w-3.5 h-3.5 text-[#C5A059]"></i>
                 <span>Artisan Fabric Selection</span>
               </div>
-              <p class="text-[11px] text-zinc-500 leading-normal font-light">
+              <p class="text-[10px] sm:text-[11px] text-zinc-500 leading-normal font-light">
                 Non-pilling, breathable fibres carefully tested for pin-hold stability and longevity.
               </p>
             </div>
@@ -332,7 +325,7 @@
                 <i data-lucide="package-check" class="w-3.5 h-3.5 text-[#C5A059]"></i>
                 <span>Heirloom Hampers</span>
               </div>
-              <p class="text-[11px] text-zinc-500 leading-normal font-light">
+              <p class="text-[10px] sm:text-[11px] text-zinc-500 leading-normal font-light">
                 Gold-embossed keepsake presentation boxes personalized for celebrations and weddings.
               </p>
             </div>
@@ -340,8 +333,8 @@
 
           <div class="pt-2">
             <div class="flex items-center gap-2">
-              <span class="font-serif text-lg font-bold text-[#5C1D24] tracking-wider">N.S COLLECTION</span>
-              <span class="text-[10px] text-[#C5A059] uppercase tracking-widest border-l border-[#E8E1D5] pl-2">Modest Luxury</span>
+              <span class="font-serif text-base sm:text-lg font-bold text-[#5C1D24] tracking-wider">N.S COLLECTION</span>
+              <span class="text-[9px] sm:text-[10px] text-[#C5A059] uppercase tracking-widest border-l border-[#E8E1D5] pl-2">Modest Luxury</span>
             </div>
           </div>
         </div>
@@ -350,10 +343,10 @@
   </section>
 
   <!-- How To Order Section -->
-  <section id="section-how-to-order" class="py-14 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC]">
+  <section id="section-how-to-order" class="py-12 sm:py-16 bg-[#FAF7F0] border-b border-[#EFE8DC]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto space-y-2 mb-10">
-        <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
+      <div class="text-center max-w-2xl mx-auto space-y-2 mb-8 sm:mb-10">
+        <div class="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
           <i data-lucide="sparkles" class="w-3 h-3"></i>
           <span>Effortless & Flexible Ordering</span>
         </div>
@@ -363,15 +356,15 @@
         </p>
       </div>
 
-      <div id="how-to-order-steps" class="grid grid-cols-1 md:grid-cols-3 gap-5 relative">
+      <div id="how-to-order-steps" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 relative">
         <!-- Rendered dynamically by JavaScript -->
       </div>
 
-      <div class="mt-8 text-center flex flex-wrap items-center justify-center gap-3">
-        <button id="btn-start-shopping" class="px-5 py-2.5 rounded-full bg-[#5C1D24] text-white text-xs sm:text-sm font-medium hover:bg-[#47151a] transition-all shadow-2xs cursor-pointer">
+      <div class="mt-8 text-center flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+        <button id="btn-start-shopping" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#5C1D24] text-white text-xs sm:text-sm font-medium hover:bg-[#47151a] transition-all shadow-2xs cursor-pointer">
           Start Shopping Now
         </button>
-        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20have%20a%20question%20about%20ordering!" target="_blank" rel="noopener noreferrer" class="px-4.5 py-2.5 rounded-full bg-white border border-[#25D366] text-[#128C7E] text-xs sm:text-sm font-medium hover:bg-[#25D366]/10 transition-all flex items-center gap-1.5 shadow-2xs">
+        <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20have%20a%20question%20about%20ordering!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-4.5 py-2.5 rounded-full bg-white border border-[#25D366] text-[#128C7E] text-xs sm:text-sm font-medium hover:bg-[#25D366]/10 transition-all flex items-center justify-center gap-1.5 shadow-2xs">
           <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#25D366]"></i>
           <span>Have a Question? Chat on WhatsApp</span>
         </a>
@@ -380,12 +373,12 @@
   </section>
 
   <!-- SOCIAL PROOF / REVIEWS SECTION -->
-  <section id="section-reviews" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+  <section id="section-reviews" class="py-12 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
       
       <!-- Instagram Header & Follower Proof -->
       <div class="text-center max-w-2xl mx-auto space-y-2">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#C5A059]/40 text-[#5C1D24] text-[11px] font-semibold uppercase tracking-[0.2em] shadow-xs">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#C5A059]/40 text-[#5C1D24] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] shadow-xs">
           <i data-lucide="instagram" class="w-3 h-3 text-[#C5A059]"></i>
           <span>Join Our Global Community</span>
         </div>
@@ -412,13 +405,13 @@
       </div>
 
       <!-- Instagram Highlight Reel Grid -->
-      <div id="instagram-reel-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div id="instagram-reel-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         <!-- Rendered via JavaScript -->
       </div>
 
       <!-- Customer Reviews & Testimonials Section -->
       <div class="pt-6 border-t border-[#E8E1D5] space-y-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div>
             <span class="text-[10px] font-semibold uppercase tracking-wider text-[#C5A059] block">
               Real Customer Love
@@ -429,7 +422,7 @@
           </div>
           <button
             onclick="openReviewModal()"
-            class="px-4 py-2 rounded-full bg-white border border-[#C5A059] hover:bg-[#FAF7F0] text-[#5C1D24] text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+            class="px-4 py-2 rounded-full bg-white border border-[#C5A059] hover:bg-[#FAF7F0] text-[#5C1D24] text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs transition-colors cursor-pointer"
           >
             <i data-lucide="message-square-heart" class="w-3.5 h-3.5 text-[#C5A059]"></i>
             <span>Leave a Review</span>
@@ -445,10 +438,10 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="section-faq" class="py-14 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
+  <section id="section-faq" class="py-12 sm:py-16 bg-[#FDFBF7] border-b border-[#EFE8DC]">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-2 mb-8">
-        <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
+        <div class="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A059]">
           <i data-lucide="help-circle" class="w-3 h-3"></i>
           <span>Got Questions?</span>
         </div>
@@ -473,45 +466,143 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-[#1B0B0E] text-[#FAF7F0] mt-auto border-t-2 border-[#C5A059]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8 space-y-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full bg-[#5C1D24] text-[#E6CA85] flex items-center justify-center font-serif font-bold text-base border border-[#C5A059]">
+              NS
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-lg font-semibold tracking-wide text-white">N.S Collection</span>
+              <span class="text-[9px] tracking-widest uppercase text-[#C5A059] font-sans">By Noor Saba Momin</span>
+            </div>
+          </div>
+          <p class="text-xs text-zinc-400 font-light leading-relaxed max-w-sm">
+            Curated luxury hijabs, georgettes, and artisan gift hampers designed to embody grace, modesty, and timeless elegance for every occasion.
+          </p>
+          <div class="flex items-center gap-3 pt-1">
+            <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#C5A059] hover:text-white transition-colors flex items-center justify-center text-[#C5A059] border border-white/10">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20have%20an%20inquiry!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#25D366] hover:text-white transition-colors flex items-center justify-center text-[#25D366] border border-white/10">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+            <a href="mailto:admin@nscollection.com" aria-label="Email" class="w-8 h-8 rounded-full bg-white/5 hover:bg-[#5C1D24] hover:text-white transition-colors flex items-center justify-center text-[#E6CA85] border border-white/10">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="font-serif text-sm font-semibold tracking-wider text-[#C5A059] uppercase">Quick Links</h4>
+          <ul class="space-y-2 text-xs text-zinc-300 font-light">
+            <li><button onclick="navigateToSection('section-shop')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Shop Catalogue</button></li>
+            <li><button onclick="navigateToSection('section-hampers')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Hijab Hampers</button></li>
+            <li><button onclick="navigateToSection('section-custom-hamper')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Bespoke Customizer</button></li>
+            <li><button onclick="navigateToSection('section-about')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Our Story</button></li>
+            <li><button onclick="navigateToSection('section-reviews')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Client Reviews</button></li>
+            <li><button onclick="navigateToSection('section-faq')" class="hover:text-[#C5A059] transition-colors cursor-pointer">FAQ</button></li>
+          </ul>
+        </div>
+
+        <!-- Collections -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-serif text-sm font-semibold tracking-wider text-[#C5A059] uppercase">Collections</h4>
+          <ul class="space-y-2 text-xs text-zinc-300 font-light">
+            <li><button onclick="setCategory('Modal Silk'); navigateToSection('section-shop');" class="hover:text-[#C5A059] transition-colors cursor-pointer">Modal Silk Hijabs</button></li>
+            <li><button onclick="setCategory('Georgette'); navigateToSection('section-shop');" class="hover:text-[#C5A059] transition-colors cursor-pointer">Premium Georgette</button></li>
+            <li><button onclick="setCategory('Cotton Jersey'); navigateToSection('section-shop');" class="hover:text-[#C5A059] transition-colors cursor-pointer">Organic Cotton Jersey</button></li>
+            <li><button onclick="navigateToSection('section-hampers')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Nikah Keepsake Chests</button></li>
+            <li><button onclick="navigateToSection('section-hampers')" class="hover:text-[#C5A059] transition-colors cursor-pointer">Bridal Gift Sets</button></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Studio Details -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-serif text-sm font-semibold tracking-wider text-[#C5A059] uppercase">Get In Touch</h4>
+          <ul class="space-y-2.5 text-xs text-zinc-300 font-light">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5"></i>
+              <span>N.S Collection Studio, Bhiwandi, Maharashtra, India</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366] flex-shrink-0"></i>
+              <a href="https://wa.me/?text=Hi%20N.S%20Collection%2C%20I%20have%20a%20query!" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp Order Desk</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-[#C5A059] flex-shrink-0"></i>
+              <a href="mailto:nsgmomin9911@gmail.com" class="hover:text-white transition-colors">nsgmomin9911@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="instagram" class="w-4 h-4 text-[#C5A059] flex-shrink-0"></i>
+              <a href="https://instagram.com/noor_saba_momin" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@noor_saba_momin</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-[#C5A059] flex-shrink-0"></i>
+              <span>Mon - Sat: 10:00 AM - 8:00 PM IST</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Divider & Rights -->
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400 font-light">
+        <p>© 2026 N.S Collection by Noor Saba Momin. All rights reserved.<br>Website By <a href="https://instagram.com/webaura_iii">Webaura By III</p>
+        <div class="flex items-center gap-4 text-zinc-400">
+          <span class="hover:text-[#C5A059] transition-colors">Worldwide Tracked Delivery</span>
+          <span>•</span>
+          <span class="hover:text-[#C5A059] transition-colors">Gold Wax-Sealed Packaging</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Open Cart Trigger (Floating CTA Bar) -->
-  <div class="fixed bottom-4 right-4 z-40 flex items-center">
-    <button id="btn-open-cart-floating" class="px-4 py-3 rounded-full bg-[#5C1D24] text-white text-xs font-bold shadow-lg hover:bg-[#47151a] flex items-center gap-2 cursor-pointer">
+  <div class="fixed bottom-4 right-4 z-40 flex items-center gap-2 max-w-[calc(100vw-2rem)]">
+    <button id="btn-open-cart-floating" class="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full bg-[#5C1D24] text-white text-xs font-bold shadow-lg hover:bg-[#47151a] flex items-center gap-2 cursor-pointer transition-transform active:scale-95">
       <i data-lucide="shopping-bag" class="w-4 h-4 text-[#E6CA85]"></i>
-      <span>View Shopping Bag (<span id="floating-cart-count">0</span>)</span>
+      <span class="whitespace-nowrap">Bag (<span id="floating-cart-count">0</span>)</span>
     </button>
-    <button id="btn-open-review-floating" class="ml-2 px-4 py-3 rounded-full bg-[#C5A059] text-white text-xs font-bold shadow-lg hover:bg-[#b08d47] flex items-center gap-2 cursor-pointer inline-flex">
+    <button id="btn-open-review-floating" class="px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full bg-[#C5A059] text-white text-xs font-bold shadow-lg hover:bg-[#b08d47] flex items-center gap-2 cursor-pointer transition-transform active:scale-95">
       <i data-lucide="message-square-heart" class="w-4 h-4"></i>
-      <span>Leave Review</span>
+      <span class="hidden xs:inline whitespace-nowrap">Review</span>
     </button>
   </div>
 
-  <!-- Cart Drawer -->
+  <!-- Cart Drawer Modal -->
   <div id="modal-cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
     <div id="cart-drawer-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-xs transition-opacity"></div>
-    <div class="absolute inset-y-0 right-0 max-w-full flex pl-8">
-      <div class="w-screen max-w-sm sm:max-w-md bg-[#FDFBF7] shadow-2xl flex flex-col border-l border-[#E8E1D5]">
-        <div class="px-5 py-4 bg-[#FAF7F0] border-b border-[#E8E1D5] flex items-center justify-between">
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-4 sm:pl-8">
+      <div class="w-screen max-w-xs sm:max-w-md bg-[#FDFBF7] shadow-2xl flex flex-col border-l border-[#E8E1D5]">
+        <div class="px-4 sm:px-5 py-4 bg-[#FAF7F0] border-b border-[#E8E1D5] flex items-center justify-between">
           <div class="flex items-center gap-2">
             <i data-lucide="shopping-bag" class="w-4 h-4 text-[#5C1D24]"></i>
-            <h2 class="font-serif text-lg font-medium text-[#1E1E1E]">Your Shopping Bag</h2>
-            <span id="cart-item-badge" class="text-[11px] bg-[#5C1D24] text-white px-2 py-0.2 rounded-full font-bold">0</span>
+            <h2 class="font-serif text-base sm:text-lg font-medium text-[#1E1E1E]">Your Shopping Bag</h2>
+            <span id="cart-item-badge" class="text-[10px] sm:text-[11px] bg-[#5C1D24] text-white px-2 py-0.2 rounded-full font-bold">0</span>
           </div>
           <button id="btn-close-cart" class="p-1 rounded-full text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 transition-colors cursor-pointer">
             <i data-lucide="x" class="w-4 h-4"></i>
           </button>
         </div>
 
-        <div class="px-5 py-2.5 bg-[#FAF8F3] border-b border-[#E8E1D5] space-y-1">
-          <div class="flex items-center justify-between text-[11px] text-zinc-700 font-medium">
+        <div class="px-4 sm:px-5 py-2.5 bg-[#FAF8F3] border-b border-[#E8E1D5] space-y-1">
+          <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-zinc-700 font-medium">
             <span id="free-shipping-message">Add <strong class="text-[#5C1D24]">₹2,499</strong> more for free delivery!</span>
-            <span class="text-[10px] text-zinc-500 font-normal">Goal: ₹2,499</span>
+            <span class="text-[9px] sm:text-[10px] text-zinc-500 font-normal">Goal: ₹2,499</span>
           </div>
           <div class="w-full h-1 bg-zinc-200 rounded-full overflow-hidden">
             <div id="free-shipping-bar" class="h-full bg-gradient-to-r from-[#C5A059] to-[#5C1D24] transition-all duration-300 rounded-full" style="width: 0%;"></div>
           </div>
         </div>
 
-        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3">
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-3 sm:p-5 space-y-3">
           <!-- Rendered dynamically by JavaScript -->
         </div>
 
@@ -548,32 +639,32 @@
   <!-- Build Your Own Hamper Modal -->
   <div id="modal-hamper" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-[#FDFBF7] w-full max-w-2xl rounded-2xl border border-[#C5A059]/40 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
-      <div class="bg-[#FAF7F0] px-6 py-4 border-b border-[#E8E1D5] flex items-center justify-between">
+      <div class="bg-[#FAF7F0] px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#E8E1D5] flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#5C1D24]">
-            <i data-lucide="sparkles" class="w-4 h-4 text-[#C5A059]"></i>
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#5C1D24] flex-shrink-0">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C5A059]"></i>
           </div>
           <div>
-            <h3 class="font-serif text-lg sm:text-xl font-medium text-[#1E1E1E]">Build Your Bespoke Hamper</h3>
-            <p class="text-xs text-zinc-500">Choose 2 to 4 premium items for your signature presentation box</p>
+            <h3 class="font-serif text-base sm:text-xl font-medium text-[#1E1E1E]">Build Your Bespoke Hamper</h3>
+            <p class="text-[10px] sm:text-xs text-zinc-500">Choose 2 to 4 premium items for your signature box</p>
           </div>
         </div>
         <button id="btn-close-hamper-modal" class="p-1.5 rounded-full text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
       </div>
 
-      <div class="p-6 overflow-y-auto space-y-6 flex-1">
-        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#E8E1D5]">
-          <img id="hamper-modal-img" src="" alt="Hamper" class="w-16 h-16 rounded-lg object-cover border border-[#E8E1D5] flex-shrink-0" />
-          <div class="flex-1">
-            <h4 id="hamper-modal-name" class="font-serif text-base font-semibold text-[#1E1E1E]"></h4>
-            <p id="hamper-modal-desc" class="text-xs text-zinc-500 line-clamp-1"></p>
-            <p id="hamper-modal-price" class="font-serif text-base font-bold text-[#5C1D24] mt-0.5"></p>
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6 flex-1">
+        <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white border border-[#E8E1D5]">
+          <img id="hamper-modal-img" src="" alt="Hamper" class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover border border-[#E8E1D5] flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <h4 id="hamper-modal-name" class="font-serif text-sm sm:text-base font-semibold text-[#1E1E1E] truncate"></h4>
+            <p id="hamper-modal-desc" class="text-[11px] sm:text-xs text-zinc-500 line-clamp-1"></p>
+            <p id="hamper-modal-price" class="font-serif text-sm sm:text-base font-bold text-[#5C1D24] mt-0.5"></p>
           </div>
           <div class="text-right flex-shrink-0">
-            <span class="text-[11px] font-semibold uppercase text-zinc-400 block">Selected</span>
-            <span id="hamper-counter" class="text-sm font-bold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">
+            <span class="text-[9px] sm:text-[11px] font-semibold uppercase text-zinc-400 block">Selected</span>
+            <span id="hamper-counter" class="text-xs sm:text-sm font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-amber-100 text-amber-800">
               0 / 4
             </span>
           </div>
@@ -584,31 +675,31 @@
           <span id="hamper-modal-error-text"></span>
         </div>
 
-        <div class="space-y-3">
-          <h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[#5C1D24] flex items-center justify-between">
+        <div class="space-y-2.5">
+          <h4 class="font-serif text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#5C1D24] flex items-center justify-between">
             <span>Select from available collection pool:</span>
-            <span class="text-xs font-normal text-zinc-500">Pick any 4</span>
+            <span class="text-[10px] sm:text-xs font-normal text-zinc-500">Pick 2 to 4</span>
           </h4>
 
-          <div id="hamper-pool-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div id="hamper-pool-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
             <!-- Pool items injected here -->
           </div>
         </div>
 
-        <div class="p-4 bg-[#FAF7F0] rounded-xl border border-[#E8E1D5] space-y-2">
-          <span class="text-[11px] font-semibold uppercase tracking-wider text-zinc-500 block">Your Hamper Box Preview:</span>
+        <div class="p-3 sm:p-4 bg-[#FAF7F0] rounded-xl border border-[#E8E1D5] space-y-2">
+          <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-zinc-500 block">Your Hamper Box Preview:</span>
           <div id="hamper-preview-pills" class="flex flex-wrap gap-1.5">
             <p id="hamper-empty-preview" class="text-xs text-zinc-400 italic">No items selected yet. Click any items above to curate your chest.</p>
           </div>
         </div>
       </div>
 
-      <div class="bg-[#FAF7F0] px-6 py-4 border-t border-[#E8E1D5] flex items-center justify-between gap-4">
-        <div id="hamper-footer-status" class="text-xs text-zinc-500">Select 2 more to continue</div>
+      <div class="bg-[#FAF7F0] px-4 sm:px-6 py-3 sm:py-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div id="hamper-footer-status" class="text-xs text-zinc-500 text-center sm:text-left">Select 2 more to continue</div>
 
-        <div class="flex items-center gap-3">
-          <button id="btn-cancel-hamper-modal" class="px-4 py-2 text-xs font-medium text-zinc-600 hover:text-zinc-900 cursor-pointer">Cancel</button>
-          <button id="btn-confirm-custom-hamper" class="px-6 py-2.5 rounded-full bg-[#5C1D24] hover:bg-[#451419] text-white text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-sm transition-all cursor-pointer">
+        <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
+          <button id="btn-cancel-hamper-modal" class="px-3 py-2 text-xs font-medium text-zinc-600 hover:text-zinc-900 cursor-pointer">Cancel</button>
+          <button id="btn-confirm-custom-hamper" class="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 rounded-full bg-[#5C1D24] hover:bg-[#451419] text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
             <i data-lucide="gift" class="w-4 h-4 text-[#E6CA85]"></i>
             <span>Add Custom Hamper to Bag</span>
           </button>
@@ -620,27 +711,27 @@
   <!-- Checkout Modal -->
   <div id="modal-checkout" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-[#FDFBF7] w-full max-w-xl rounded-2xl border border-[#C5A059]/40 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
-      <div class="bg-[#FAF7F0] px-6 py-4 border-b border-[#E8E1D5] flex items-center justify-between">
+      <div class="bg-[#FAF7F0] px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#E8E1D5] flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bg-[#5C1D24] text-white flex items-center justify-center">
-            <i data-lucide="shopping-bag" class="w-4 h-4 text-[#E6CA85]"></i>
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#5C1D24] text-white flex items-center justify-center flex-shrink-0">
+            <i data-lucide="shopping-bag" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E6CA85]"></i>
           </div>
           <div>
-            <h3 id="checkout-title" class="font-serif text-lg sm:text-xl font-medium text-[#1E1E1E]">Complete Your Order</h3>
-            <p id="checkout-subtitle" class="text-xs text-zinc-500">Writes directly to shared Firestore orders collection</p>
+            <h3 id="checkout-title" class="font-serif text-base sm:text-xl font-medium text-[#1E1E1E]">Complete Your Order</h3>
+            <p id="checkout-subtitle" class="text-[10px] sm:text-xs text-zinc-500">Writes directly to store orders collection</p>
           </div>
         </div>
         <button id="btn-close-checkout-modal" class="p-1.5 rounded-full text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
       </div>
 
-      <div class="p-6 overflow-y-auto flex-1 space-y-6">
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 space-y-4 sm:space-y-6">
         <!-- Form View -->
-        <form id="checkout-form" class="space-y-4">
+        <form id="checkout-form" class="space-y-3 sm:space-y-4">
           <div id="checkout-error-msg" class="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg hidden"></div>
 
-          <div class="p-3.5 bg-[#FAF7F0] rounded-xl border border-[#E8E1D5] space-y-2">
+          <div class="p-3 sm:p-3.5 bg-[#FAF7F0] rounded-xl border border-[#E8E1D5] space-y-2">
             <div class="flex justify-between items-center text-xs font-semibold text-zinc-800">
               <span id="checkout-item-count">Order Items (0)</span>
               <span id="checkout-total-price" class="text-[#5C1D24] font-bold">Total: ₹0</span>
@@ -650,17 +741,17 @@
 
           <div class="space-y-1">
             <label class="text-xs font-semibold text-zinc-700">Full Name *</label>
-            <input type="text" id="cust-name" required placeholder="e.g. Amina Farooqui" class="w-full px-3.5 py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
+            <input type="text" id="cust-name" required placeholder="e.g. Amina Farooqui" class="w-full px-3.5 py-2 sm:py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="space-y-1">
               <label class="text-xs font-semibold text-zinc-700">WhatsApp / Phone *</label>
-              <input type="tel" id="cust-phone" required placeholder="+91 98201 00000" class="w-full px-3.5 py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
+              <input type="tel" id="cust-phone" required placeholder="+91 98201 00000" class="w-full px-3.5 py-2 sm:py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
             </div>
             <div class="space-y-1">
               <label class="text-xs font-semibold text-zinc-700">Instagram Handle (optional)</label>
-              <input type="text" id="cust-ig" placeholder="@your_handle" class="w-full px-3.5 py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
+              <input type="text" id="cust-ig" placeholder="@your_handle" class="w-full px-3.5 py-2 sm:py-2.5 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
             </div>
           </div>
 
@@ -674,48 +765,43 @@
             <textarea id="cust-notes" rows="2" placeholder="e.g. Please write 'Happy Nikah Sarah!' on the gold keepsake wax card." class="w-full px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]"></textarea>
           </div>
 
-          <div class="flex items-center gap-2 text-[11px] text-zinc-500 bg-[#FAF8F3] p-2.5 rounded-lg border border-[#E8E1D5]">
+          <div class="flex items-center gap-2 text-[10px] sm:text-[11px] text-zinc-500 bg-[#FAF8F3] p-2.5 rounded-lg border border-[#E8E1D5]">
             <i data-lucide="shield-check" class="w-4 h-4 text-[#C5A059] flex-shrink-0"></i>
-            <span>Order source flagged as <strong>'website'</strong> and saved to order database.</span>
+            <span>Order source flagged as <strong>'website'</strong> and saved directly to store database.</span>
           </div>
 
-          <button id="btn-submit-order" type="submit" class="w-full py-3.5 rounded-full bg-[#5C1D24] hover:bg-[#47151a] text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <span id="btn-submit-text">Confirm & Place Order</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-[#E6CA85]"></i>
+          <button id="btn-submit-order" type="submit" class="w-full py-3 rounded-full bg-[#5C1D24] hover:bg-[#47151a] text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 shadow-sm cursor-pointer transition-colors">
+            <span>Confirm & Place Order</span>
+            <i data-lucide="check" class="w-4 h-4 text-[#E6CA85]"></i>
           </button>
         </form>
 
-        <!-- Success View (Hidden by default) -->
-        <div id="checkout-success-view" class="text-center py-6 space-y-6 hidden">
-          <div class="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center mx-auto shadow-sm animate-bounce">
-            <i data-lucide="check-circle-2" class="w-9 h-9"></i>
+        <!-- Order Success View -->
+        <div id="checkout-success-view" class="text-center space-y-4 py-4 hidden">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
+            <i data-lucide="check-circle" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <h4 id="success-order-name" class="font-serif text-lg font-bold text-zinc-900">Thank You!</h4>
+            <p id="success-order-id" class="text-xs text-[#5C1D24] font-semibold"></p>
+            <p class="text-xs text-zinc-600">Your order has been recorded and our team is preparing your pieces.</p>
           </div>
 
-          <div class="space-y-2">
-            <span id="success-order-id" class="text-xs font-semibold tracking-widest uppercase text-[#C5A059] block">Order ID: #---</span>
-            <h3 id="success-order-name" class="font-serif text-2xl font-bold text-[#1E1E1E]">Thank you!</h3>
-            <p class="text-xs sm:text-sm text-zinc-600 max-w-sm mx-auto leading-relaxed">
-              Your order has been recorded. We will prepare your bespoke parcel with care.
-            </p>
-          </div>
-
-          <div class="bg-[#FAF7F0] p-4 rounded-xl border border-[#E8E1D5] text-left text-xs space-y-2">
-            <div class="flex justify-between border-b border-[#E8E1D5] pb-2 font-semibold">
-              <span id="success-items-count">Items (0)</span>
-              <span id="success-items-total">Amount: ₹0</span>
+          <div class="p-3 bg-[#FAF7F0] rounded-xl border border-[#E8E1D5] text-left text-xs space-y-2">
+            <div class="flex justify-between font-semibold text-zinc-800 border-b border-[#E8E1D5] pb-1.5">
+              <span id="success-items-count">Items</span>
+              <span id="success-items-total">Amount</span>
             </div>
             <div id="success-items-list" class="space-y-1 text-zinc-600"></div>
-            <div class="pt-2 border-t border-[#E8E1D5] text-[11px] text-zinc-500">
-              <span id="success-shipping-address">Shipping Address: </span>
-            </div>
+            <p id="success-shipping-address" class="text-[11px] text-zinc-500 pt-1.5 border-t border-[#E8E1D5]"></p>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
-            <a id="success-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 shadow-xs transition-colors">
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+            <a id="success-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-xs">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>Notify via WhatsApp</span>
+              <span>Notify N.S Collection on WhatsApp</span>
             </a>
-            <button id="btn-continue-shopping" class="flex-1 py-3 bg-[#5C1D24] hover:bg-[#47151a] text-white rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer">
+            <button id="btn-continue-shopping" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-white border border-[#E8E1D5] text-zinc-700 text-xs font-semibold hover:bg-zinc-100 cursor-pointer">
               Continue Shopping
             </button>
           </div>
@@ -724,52 +810,54 @@
     </div>
   </div>
 
-  <!-- Leave Review Modal -->
-  <div id="modal-review" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
-    <div class="bg-[#FDFBF7] w-full max-w-md rounded-2xl border border-[#C5A059]/40 shadow-2xl overflow-hidden p-6 space-y-5">
-      <div class="flex items-center justify-between border-b border-[#E8E1D5] pb-3">
+  <!-- Review Modal -->
+  <div id="modal-review" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 hidden">
+    <div class="bg-[#FDFBF7] w-full max-w-md rounded-2xl border border-[#C5A059]/40 shadow-2xl overflow-hidden flex flex-col">
+      <div class="bg-[#FAF7F0] px-5 py-4 border-b border-[#E8E1D5] flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <i data-lucide="message-square-heart" class="w-5 h-5 text-[#5C1D24]"></i>
-          <h3 class="font-serif text-lg font-medium text-[#1E1E1E]">Share Your Experience</h3>
+          <div class="w-7 h-7 rounded-full bg-[#C5A059]/20 flex items-center justify-center text-[#5C1D24]">
+            <i data-lucide="message-square-heart" class="w-4 h-4 text-[#C5A059]"></i>
+          </div>
+          <h3 class="font-serif text-base sm:text-lg font-medium text-[#1E1E1E]">Leave a Review</h3>
         </div>
-        <button id="btn-close-review-modal" class="text-zinc-400 hover:text-zinc-700">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button id="btn-close-review-modal" class="p-1.5 rounded-full text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
       </div>
 
-      <div id="review-success-view" class="text-center py-6 space-y-3 hidden">
-        <i data-lucide="check-circle-2" class="w-12 h-12 text-emerald-600 mx-auto"></i>
-        <h4 class="font-serif text-xl text-[#1E1E1E]">Review Submitted!</h4>
-        <p class="text-xs text-zinc-600">
-          Thank you for supporting N.S Collection. Your review has been submitted for verification.
-        </p>
-        <button id="btn-close-review-success" class="mt-4 px-6 py-2 bg-[#5C1D24] text-white rounded-full text-xs font-semibold cursor-pointer">Close</button>
-      </div>
-
-      <form id="review-form" class="space-y-4">
-        <div>
-          <label class="text-xs font-semibold text-zinc-700 block mb-1">Your Name *</label>
-          <input type="text" id="review-name" required placeholder="e.g. Maryam K." class="w-full px-3 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
-        </div>
-
-        <div>
-          <label class="text-xs font-semibold text-zinc-700 block mb-1">Star Rating</label>
-          <div id="review-star-rating" class="flex gap-2 text-2xl text-[#C5A059] cursor-pointer">
-            <!-- Rendered by JS -->
+      <div class="p-5 space-y-4">
+        <form id="review-form" class="space-y-4">
+          <div class="space-y-1 text-center">
+            <label class="text-xs font-semibold text-zinc-700 block">Your Rating</label>
+            <div id="review-star-rating" class="flex justify-center gap-1"></div>
           </div>
-        </div>
 
-        <div>
-          <label class="text-xs font-semibold text-zinc-700 block mb-1">Review *</label>
-          <textarea id="review-text" rows="3" required placeholder="Tell us about the fabric feel, drape, packaging, or delivery..." class="w-full px-3 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]"></textarea>
-        </div>
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-zinc-700">Your Name *</label>
+            <input type="text" id="review-name" required placeholder="e.g. Fatima K." class="w-full px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]" />
+          </div>
 
-        <div class="pt-2">
-          <button type="submit" class="w-full py-2.5 bg-[#5C1D24] hover:bg-[#47151a] text-white rounded-full text-xs sm:text-sm font-semibold transition-colors cursor-pointer">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-zinc-700">Your Review / Experience *</label>
+            <textarea id="review-text" rows="3" required placeholder="Tell us what you loved about the fabric, drape, or hamper presentation..." class="w-full px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs sm:text-sm text-zinc-800 focus:outline-none focus:border-[#C5A059]"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-2.5 rounded-full bg-[#5C1D24] hover:bg-[#47151a] text-white text-xs sm:text-sm font-semibold cursor-pointer transition-colors">
             Submit Review
           </button>
+        </form>
+
+        <div id="review-success-view" class="text-center space-y-3 py-4 hidden">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
+            <i data-lucide="check" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-serif text-base font-bold text-zinc-900">Thank You For Your Feedback!</h4>
+          <p class="text-xs text-zinc-600">Your review has been added to our storefront list.</p>
+          <button id="btn-close-review-success" class="px-5 py-2 rounded-full bg-[#5C1D24] text-white text-xs font-medium cursor-pointer">
+            Close Window
+          </button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
   <script src="app.js"></script>
