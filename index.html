@@ -11,6 +11,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  const activeClasses = [
+    "text-[#5C1D24]",
+    "font-semibold",
+    "border-b-2",
+    "border-[#C5A059]",
+    "pb-1"
+  ];
+
+  if (currentPage === "index.html") {
+    document.getElementById("nav-home")?.classList.add(...activeClasses);
+  }
+
+  if (currentPage === "catalogue.html") {
+    document.getElementById("nav-products")?.classList.add(...activeClasses);
+  }
+</script>
 </head>
 <body id="top" class="bg-[#FDFBF7] text-[#1E1E1E] antialiased flex flex-col min-h-screen">
 
@@ -39,13 +58,13 @@
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 text-[12px] xl:text-[13px] font-medium text-[#1E1E1E]">
-        <button onclick="navigateToSection('section-shop')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Shop Catalogue</button>
-        <button onclick="navigateToSection('section-hampers')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Hijab Hampers</button>
-        <button onclick="navigateToSection('section-about')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Our Story</button>
-        <button onclick="navigateToSection('section-how-to-order')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">How to Order</button>
-        <button onclick="navigateToSection('section-reviews')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">Reviews</button>
-        <button onclick="navigateToSection('section-faq')" class="relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors cursor-pointer whitespace-nowrap">FAQ</button>
+      <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium">
+        <a id="nav-home" href="index.html" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">Home</a>
+        <a id="nav-products" href="catalogue.html" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">Shop Catalogue</a>
+        <a href="index.html#section-hampers" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">Hijab Hampers</a>
+        <a href="index.html#section-about" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">Our Story</a>
+        <a href="index.html#section-reviews" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">Reviews</a>
+        <a href="index.html#section-faq" class="nav-link relative py-1 text-zinc-700 hover:text-[#5C1D24] transition-colors">FAQ</a>
       </nav>
 
       <!-- Right CTA Actions -->
@@ -79,12 +98,12 @@
     <!-- Mobile Nav Drawer -->
     <div id="mobile-drawer" class="hidden lg:hidden bg-[#FDFBF7] border-b border-[#E8E1D5] px-4 pt-2 pb-5 space-y-2.5 shadow-lg">
       <div class="grid grid-cols-1 gap-1">
-        <button onclick="navigateToSection('section-shop'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Shop Catalogue</button>
-        <button onclick="navigateToSection('section-hampers'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Hijab Hampers</button>
-        <button onclick="navigateToSection('section-about'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Our Story</button>
-        <button onclick="navigateToSection('section-how-to-order'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">How to Order</button>
-        <button onclick="navigateToSection('section-reviews'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">Reviews</button>
-        <button onclick="navigateToSection('section-faq'); toggleMobileMenu();" class="text-left px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2] hover:text-[#5C1D24] cursor-pointer">FAQ</button>
+        <a href="index.html" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">Home</a>
+        <a href="catalogue.html" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">Shop Catalogue</a>
+        <a href="index.html#section-hampers" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">Hijab Hampers</a>
+        <a href="index.html#section-about" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">Our Story</a>
+        <a href="index.html#section-reviews" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">Reviews</a>
+        <a href="index.html#section-faq" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-800 hover:bg-[#F3EDE2]">FAQ</a>
       </div>
 
       <div class="pt-2.5 border-t border-[#E8E1D5] flex flex-col gap-2">
